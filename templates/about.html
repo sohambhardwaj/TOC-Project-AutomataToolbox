@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <title>Automata Toolbox</title>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="/">Automata Toolbox</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/">NFA2DFA</a>
+            <a class="nav-item nav-link" href="{{url_for('regex2dfa')}}">RegEx2DFA</a>
+            <a class="nav-item nav-link" href="/about">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-12">
+<div style="font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px">
+	<p>‘Automata Toolbox’ can perform various operations on Regular Expressions, Non-deterministic Finite Automata (NFA) and Deterministic Finite Automata (DFA). You can convert a NFA to its equivalent DFA or we can convert a Regular Expression to its equivalent DFA. Along with the conversions, visuals have been provided at each step to give the user a better understanding.  It has an easy to user interface with full flexibility and instructions given to the user. </p>
+</div>
+
+    <p style="position: fixed; bottom: 0; text-align: center; width: 80%"><b>< ></b> with &#10084; by <br>Soham Bhardwaj and Sonu kumar</p>
+</div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script>
+$(document).ready(function(){
+    var max_input_fields = 10;
+    var add_input = $('.add-input');
+    var input_wrapper = $('.input-wrapper');
+    var new_input = '<input type="text" class="form-control" name="field[]" value="" placeholder="A a B"/><br>';
+    var add_input_count = 1; 
+    $(add_input).click(function(){
+        if(add_input_count < max_input_fields){
+            add_input_count++; 
+            $(input_wrapper).append(new_input); 
+        }
+    });
+    $(input_wrapper).on('click', '.remove-input', function(e){
+        e.preventDefault();
+        $(this).parent('div').remove();
+        add_input_count--;
+    });
+});
+</script>
+</body>
+
+</html>

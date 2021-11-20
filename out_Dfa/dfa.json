@@ -1,0 +1,56 @@
+{
+    "states": [
+        "A",
+        "AB",
+        "ABC",
+        "AC",
+        "ABCD",
+        "ACD",
+        "ABD",
+        "AD"
+    ],
+    "terminals": [
+        "a",
+        "b"
+    ],
+    "transition": {
+        "A": {
+            "a": "AB",
+            "b": "A"
+        },
+        "AB": {
+            "a": "ABC",
+            "b": "AC"
+        },
+        "ABC": {
+            "a": "ABCD",
+            "b": "ACD"
+        },
+        "AC": {
+            "a": "ABD",
+            "b": "AD"
+        },
+        "ABCD": {
+            "a": "ABCD",
+            "b": "ACD"
+        },
+        "ACD": {
+            "a": "ABD",
+            "b": "AD"
+        },
+        "ABD": {
+            "a": "ABC",
+            "b": "AC"
+        },
+        "AD": {
+            "a": "AB",
+            "b": "A"
+        }
+    },
+    "finalStates": [
+        "ABCD",
+        "ACD",
+        "ABD",
+        "AD"
+    ]
+}
